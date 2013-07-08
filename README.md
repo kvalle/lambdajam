@@ -1,6 +1,8 @@
 Notater fra Lambda Jam
 ======================
 
+Notater fra Lambda Jam 2013, i varierende grad av kompletthet og kvalitet. Beklager på forhånd for skamløs miks av norsk og engelsk.
+
 Data, Visibility, and Abstraction - Stuart Sierra
 -------------------------------------------------
 
@@ -79,3 +81,81 @@ Må tenke på:
 - hva er trygge initial states?
 - hvilke "krasj" er det ikke verdt å få beskjed om (fordi de fikser seg selv)?
 
+
+Workshop: The Art of Several Interpreters, Quickly - Daniel P. Friedman, Jason Hemann
+-------------------------------------------------------------------------------------
+
+> Denne workshoppen var (som på forhånd forventet) veldig akademisk, veldig morsom (og veldig vanskelig).
+
+Mesteparten av koden vi gikk igjennom ligger ut på GitHub her: <https://github.com/jasonhemann/lambdajam2013>
+
+Vi startet med å gå igjennom en del øvelser der vi fikk presentert deler av en interpreter, og fikk selv muligheten til å fylle inn det som manglet.
+
+Den siste timen var dedikert til metacircular interpreters: "interpreters interpreting interpreters interpreting .... interpreting some expression". 
+
+Vi var også innom (og implementerte) dynamic scoping. Friedman hadde dette å si om temaet: 
+
+> 'dynamic scope', posibly the worst combination of letters on the planet.
+
+og
+
+> Dynamic scope is really bad for your brain.
+
+
+
+Systems that run forever self-heal and scale - Joe Armstrong
+------------------------------------------------------------
+
+> Morsom og interessant talk om utfordringene med å lage robuste systemer. Ble filmet, absolutt verdt å se når det blir lagt ut.
+
+Starter med å illustrere sekvensiell programmering som én stor sirkel, mens Erlang-måten å designe feiltolerante systemer kan sammenliknes med en stor graf av små sirkler som kommuniserer med hverandre.
+
+Tenker på erlang prosesser som folk. Vi har alle våre egne minner, kommuniserer med beskjeder, og yttre støy kan påvirke og skape utfordringer for kommunikasjon oss imellom.
+
+Det finnes tilnærminger til å designe programmer:
+
+1. designe for noen få brukere, og skalere opp
+1. designe for MANGE brukere, og skalere opp
+
+Sistnevnte er langt enklere!
+
+Et av de vanskeligste problemene å løse: "acheving consistenty in data across processes"
+
+For å sikre tilgjengelige data:
+- må ha flere kopier, med ulike måter å adressere
+- beregnger kan gjøres overalt!
+
+Joe beskriver **6 regler** for å lage feiltolerante systemer:
+
+*Isolation*
+
+- en prosess kan ikke kræsje en annen!
+- fører til en hel rekke fine egenskaper: fault-tolerance, scalability, reliability, testability, comprehensibility, code upgrade
+- Erlang-prosesser er lettvekts og fullstendig isolerte
+
+*Concurrency*
+
+- verden er concurrent!
+- mange problemer er pinlig paralelle.
+- trenger MINST to maskiner for å lage et system som ikke går ned
+- ingen vei utenom concurrent og distributed hvis en vil ha fault-tolerance
+- Erlang prosesser er concurrent, og alle kjører (i teorien) i paralell
+
+*Must detect failures*
+
+- kan ikke fikse feil du ikke kan oppdage
+- må fungere på tvers av maskiner; hele maskiner kan feile
+- kan løses med "supervision trees" på tvers av prosesser/maskiner
+- Erlang-prosesser kan linkes sammen, slik at alle dør dersom én av dem dør
+- Har prosesser som "gjør arbeidet", noen som overvåker andre, og manager-prosesser som styrer det hele.
+
+*Fault identification*
+
+- Meldinger om at en prosess har feilet sender også med årsaken til feilen.
+
+*Live code upgrade*
+
+- Vil ikke ha nedetid
+- "Once a system is started, we go forever"
+
+*Stable storage*
