@@ -1,5 +1,5 @@
-Notater fra Lambda Jam - Dag 1
-==============================
+Notater fra Lambda Jam
+======================
 
 Data, Visibility, and Abstraction - Stuart Sierra
 -------------------------------------------------
