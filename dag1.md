@@ -20,8 +20,13 @@ Stuart tar oss med på sin ferd gjennom programmeringspråk, og hvordan han har 
 * Hexagonal Architecture: Se på applikasjon som en separat enhet, som er koblet til GUI, tester, WS, DB, whatever, vha "adaptors". Programmet er en *data manipulator*, adaptorne håndterer "effekten".
 * Gode abstraksjoner gjør det enklere å *se hva programmet gjør*. (Det er også noen store viktige abstraksjoner som gjør ting usylig (GC, eksempelvis), men disse er det ikke så mange av.)
 
-Simile-Free Monad Recipes - Aditya Siram
+(Simile-Free) Monad Recipes - Aditya Siram
 ----------------------------------------
+
+Intro til monader i Haskell: IO, Reader, Writer, State, Monad Transfers
+
+*Kode, kode, kode. Og et tempo som gjorde det plent umulig å skrive notater.*
 
 Let It Crash: Erlang Fault Tolerance - Tristan Sloughter
 --------------------------------------------------------
+
