@@ -30,3 +30,52 @@ Intro til monader i Haskell: IO, Reader, Writer, State, Monad Transfers
 Let It Crash: Erlang Fault Tolerance - Tristan Sloughter
 --------------------------------------------------------
 
+Tristan:
+
+- Github: tsloughter
+- Jobber i Heroku, skriver routing infrastruktur i Erlang
+
+Erlang fokuserer på: Concurrency, distribution, actors, green threads (lettvekts-tråder). Men hva er vel disse verdt uten **fault tolerance**?
+
+* I routing: Mye kan gå galt. Degradering (tregere eller dårligere respons) er alltid bedre enn å ikke gi noen respons i det hele tatt.
+* I logging: Bedre om logger kommer senere, enn at de ikke kommer. Og bedre å informere om logger som mangler, enn at de ikke er der.
+
+**Fault tolerance**: the ability to keep working to a level of satisfaction in the presence of failure.
+
+Tre viktige konsepter
+
+- Isolation: 
+  - immutable variabler, billige prosesser, linke processer sammen
+  - message passing lar oss slippe shared state
+  - monitor: unidirectional; link: bidirectional
+  - vi kan håndtere errors i en annen prosess enn der feilen skjedde
+- Graceful Degradation:
+  - GC er separert per prosess, og gjøre concurrent
+  - kan gå inn og modifiser og inspisere kjørende systemer
+- Recovery
+  - OTP supervisors
+  - Prosesser trenger en "initial state" som det er trygt å gå tilbake til
+
+Let it Crash
+
+- Vær forberedt på at det kommer til å krasje
+- Tester dekker ikke alt, du kommer ikke til å være forberedt på alt!
+- Defeinsiv kodeing suger! (Happy path er penere, kjappere og lettere kode å forstå.)
+
+"Heisenbugs most likely source of fire"
+
+- 1/132 bugs NOT heisenbugs
+- Let it Crash often enough to fix production issues
+
+Crash == process crash, all state lost. Men systemet skal fortette å kjøre som før.
+
+OTP: For Erlang hva J2EE prøver å være for Java.
+- gen_server: abstraherer bort vanlig pattern for å lage spawn->init->loop->exit pattern
+- supervisors: prosess for å overvåke (flere) andre prosesser gitt ulike stratgier for hva som skal gjøres når en av dem feiler. Hvis overvåkede noder fortsetter å krasje kan supervisoren bytte strategi eller krasje seg selv, slik at feilen propagerer oppover.
+
+Må tenke på:
+
+- hva kan krasje?
+- hva er trygge initial states?
+- hvilke "krasj" er det ikke verdt å få beskjed om (fordi de fikser seg selv)?
+
