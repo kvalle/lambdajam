@@ -265,3 +265,21 @@ Tror hovedpoenget her er at hvis vi ikke gjør oss avhengig av statements kan vi
 
 Siden programer består av formell logikk, programmerer vi kun når vi gjør endringer til denne logikken.
 
+
+Functional composition - Chris Ford
+-----------------------------------
+
+Musikk generert vha modifisering av sinusbølger i Clojure. Veldig bra, og fullstendig umulig å notere fra. Se videoen.
+
+
+Workshop: Program Transformations - William Byrd, Nada Amin
+-----------------------------------------------------------
+
+Dagens kvote på tre og en halv time med meget akademisk moro.
+Vi lærte om "correctness-preserving transformations", der målet var å forenkle Scheme-programmer til kode det var enkelt å kompilere ned til C.
+
+Først og viktigst var transformasjonen CPS (continuation passing style), som lar oss skrive om funksjoner som ikke er tail-rekursive til å ikke sprenge stacken når de kjøres, ved å utsette det som gjenstår som continuations.
+
+All kode vi lekte med er tilgjengelig på GitHub: <https://github.com/namin/lambdajam>
+
+
