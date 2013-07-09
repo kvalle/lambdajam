@@ -193,3 +193,4 @@ Iteratee har to tilstander, `Cont` og `Done` som forteller enumerator hvorvidt d
 Input til iteratoren vil være et input-element, EOF, eller Empty (dvs, "har ikke data nå, kommer mer senere.").
 Transformerens jobb er å konvertere mellom iteratorer av ulike typer.
 
+Kode ligger på <https://github.com/nraychaudhuri/iteratee-exercies>.
