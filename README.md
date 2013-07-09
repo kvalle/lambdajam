@@ -3,6 +3,9 @@ Notater fra Lambda Jam
 
 Notater fra Lambda Jam 2013, i varierende grad av kompletthet og kvalitet. Beklager på forhånd for skamløs miks av norsk og engelsk.
 
+Dag 1
+=====
+
 Data, Visibility, and Abstraction - Stuart Sierra
 -------------------------------------------------
 
@@ -159,3 +162,34 @@ Joe beskriver **6 regler** for å lage feiltolerante systemer:
 - "Once a system is started, we go forever"
 
 *Stable storage*
+
+Dag 2
+=====
+
+Functional I/O in Scala - Nilanjan Raychaudhuri
+-----------------------------------------------
+
+Nilanjan arbeider for Typesafe, og jobber med Play.
+
+IO er "problembarnet" når vi prater om funksjonell programmering.
+
+**Lazy IO**: Ønsker å behandle filer som en "collection of data". 
+
+- Utfordring: når lukker en filen?
+
+Wish list: composibility, scalability, and resource-safety
+
+Løsning etter denne modellen
+
+    producer -> transformer -> consumer
+            bits           json
+
+- Producer implementert som enumerator
+- Transformer er enumeratee
+- Consumer, iteratee
+
+Iteratee implementerer fold, som tar *input* og gir en ny iteratee.
+Iteratee har to tilstander, `Cont` og `Done` som forteller enumerator hvorvidt den ønsker å iterere videre.
+Input til iteratoren vil være et input-element, EOF, eller Empty (dvs, "har ikke data nå, kommer mer senere.").
+Transformerens jobb er å konvertere mellom iteratorer av ulike typer.
+
