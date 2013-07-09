@@ -283,3 +283,12 @@ Først og viktigst var transformasjonen CPS (continuation passing style), som la
 All kode vi lekte med er tilgjengelig på GitHub: <https://github.com/namin/lambdajam>
 
 
+Programming for the Expression of Ideas - Gerald Sussman
+--------------------------------------------------------
+
+"Datamaskinen har både revolusjonert hvordan vi tenker, og hvordan vi uttrykker det vi tenker."
+
+Sussman går igjennom en rekke eksempler fra electrical engineering og fysikk (med en del veldig hardcore likninger) og viser hvordan å implementere disse ofte avslører "mangler" med de tradisjonelle representasjonene av disse idéene.
+
+Forholdsvis avansert, ganske morsomt, og pøkk umulig å notere fra.
+
