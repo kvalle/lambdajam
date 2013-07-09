@@ -169,7 +169,7 @@ Dag 2
 Functional I/O in Scala - Nilanjan Raychaudhuri
 -----------------------------------------------
 
-Nilanjan arbeider for Typesafe, og jobber med Play.
+*Nilanjan arbeider for Typesafe, og jobber med Play.*
 
 IO er "problembarnet" når vi prater om funksjonell programmering.
 
@@ -194,3 +194,74 @@ Input til iteratoren vil være et input-element, EOF, eller Empty (dvs, "har ikk
 Transformerens jobb er å konvertere mellom iteratorer av ulike typer.
 
 Kode ligger på <https://github.com/nraychaudhuri/iteratee-exercies>.
+
+
+Semantics, clarity, and notation: the benefits of expressions over statements - Tracy Harms
+-------------------------------------------------------------------------------------------
+
+Tre konsepter som er viktig å tenke på når en skal skrive og forstå programmer.
+
+**meaning**
+**understanding**
+**expression**
+
+- meaning as a function
+- program as a function
+
+hvis
+
+    f = g
+
+...hvor mange funksjoner har vi?
+
+*one function, two expressions*
+
+Jo flere expressions vi må forholde oss til, dess vanskeligere blir det å forholde seg til.
+
+one program, multiple forms - the form we write, and the form we run
+
+Mening ble på slutten av 1800-tallet formalisert vha "logic as symbol manipulation".
+Noe som førte til flere ulike modeller.
+
+- lambda calculus
+- turing machine
+- combinatorial logic
+- ...og mange mange flere
+
+Og vi kan velge mellom ulike modeller når vi resonerer.
+
+Expression er over ment som "uttrykk for noe". 
+Kan også skille mellom statements og expressions.
+
+- statements have effects
+- expressions have values
+- *og noen ting har begge deler!*
+
+Statements er sekvensielle, tilstandsfulle og avhengige av kontekst.
+Dette fører til en imperativ verden der vi må tenke på tid og "fra datamaskinens perspektiv".
+
+Expressions are immediate and proximate. Hvis expressions ikke avhenger av muterbar tilstand kan vi evaluere dem uavhengig av tidspunkt.
+
+*Seeking a higher level perspective*
+
+Viktig konsept i OO: cohesion og coupling. Viktig også utenfor OO:
+
+- Cohesion: funksjoner
+- Coupling: funksjonskomposisjon
+
+> Peter Landin, 1966: "the next 700 programming languages" (paper)
+
+Mente språk vil bevege seg mot matematisk notasjon. Fra paperet:
+
+    a) Each *expression* has a nesting subexpression structure,
+    b) each subexpression *denotes something*,
+    c) the thing an expression denotes, its value, *depends only on the values of its subexpressions*, not on other properties of them.
+
+*interlude: live coding i J.*
+
+Tror hovedpoenget her er at hvis vi ikke gjør oss avhengig av statements kan vi benytte oss av alternativer til den imperative modellen. Bruk av expressions gjør oss i stand til å uttrykke mening i andre modeller, slik som kombinatorisk logikk (i eksempelvis J).
+
+> Expressions condense meaning in space, and eliminate time.
+
+Siden programer består av formell logikk, programmerer vi kun når vi gjør endringer til denne logikken.
+
