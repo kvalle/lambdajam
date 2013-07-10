@@ -323,3 +323,76 @@ Det er også tydelig at det er viktig at biblioteket er planlagt med tanken om a
 
 Godt presentert, ikke for vanskelig, verdt å se.
 
+
+Living in a Post-Functional World - Daniel Spiewak
+--------------------------------------------------
+
+Functional programming: 
+
+- *ikke: programming with functions*
+- functions as primary abstraction unit.
+
+OO: programmering med objekter som primære abstraksjon
+
+Når en får nok "ting" trenger en måter å organisere på. 
+Reelle systemer har *mange* funksjoner.
+
+>  A set of functions is not a function
+
+Vi trenger et førsteklasses konsept for å organisere funksjonene.
+
+**Real modules**
+
+- Namespacing alene er ikke nok. 
+  - NS løser (kun) et problem (dog, veldig godt): å løse navnkollisjoner. 
+  -  Men kollisjonene er et symptom, ikke selve problemet!
+- Avhengigheter burde være eksplisitt uttrykt
+- Concrete binding should be deferred
+
+I Standard ML:
+
+- Signaturer er abstrakte moduler, som kan inneholde funksjoner og typer.
+- Strukturer implementerer signaturer. Hvis signatuerer sees på som interfaces, er strukturer de konkrete implementasjonene.
+- Functors løser modul-avhengigheter (*ikke* haskell's applicative functor)
+  - Tar inn en modul, gir en konkret structure vi kan bruke.
+
+- Fin egenskap: oppdeling av abstrakt og konkrete deler av modulen.
+
+I Scala:
+
+- Traits er modulene
+- Type abstraksjon
+- Avhengigheter løst vha arv
+- Instansierte traits er verdier of kind *
+
+- Ingen harde skiller mellom abstrakt og konkrete moduler. Alt er traits.
+- Kan instansiere ved å arve de abstrakte funksjonene, slik at en kan sende inn konkrete implementasjoner når det trengs senere. (Late bindings!)
+
+Key points:
+
+- I SML er funksjoner førsteklasses, mens moduler er lagt på senere
+- I Scala er moduler førsteklasses! Funksjoner er moduler.
+
+**The expresssion problem**
+
+- define a datatype by cases
+- add new cases to the datatype
+- add new functions ovver the datatype
+- don't recompile! (ikke gjør endringer på det som alt er skrevet)
+- (good luck!)
+
+> Eks: aritmetiske uttrykk implementert som FP og OO-stil. Løser i praksis hver sin side av the expression problem.
+
+Det finnes ingen løsning som går full "extensibility" både for datatype og oppførsel. Derfor viktig å tenke på hva en ønsker når en utvikler biblioteker/språk.
+
+Dette betyr også at konseptet om *objekter* er viktig å ha med seg, også i FP.
+
+*Clojure Protocols* unify typeclasses and classes (se Oliveira and Sulzmann, 2008).
+
+**Konklusjoner**
+
+- Moduler er vitale! #HaskellFail
+- Objekter hjelper oss å adressere expression-problemet
+- Ikke *alt* i OO/prosedyrebasert er dårlig!
+- Tradisjonelle idéer om FP er naïve.
+
