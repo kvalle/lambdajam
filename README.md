@@ -396,3 +396,14 @@ Dette betyr også at konseptet om *objekter* er viktig å ha med seg, også i FP
 - Ikke *alt* i OO/prosedyrebasert er dårlig!
 - Tradisjonelle idéer om FP er naïve.
 
+
+Workshop: Webmachine
+--------------------
+
+Webmachine er et webrammeverk for Erlang. I praksis en eneste stor tilstandsmaskin. Veldig anderledes å jobbe med ift alle andre webrammeverk, men ganske intuitivt når en kommer litt inn i det.
+
+- Slides: <http://lambdajam.data.riakcs.net:8080/webmachine.pdf>
+- GitHub: <https://github.com/cmeiklejohn/webmachine-tutorial>
+
+Note to self: `rebar compile skip_deps=true` for å ikke bruke evigheter på å kompilere hver gang.
+
