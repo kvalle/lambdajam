@@ -298,6 +298,28 @@ Dag 3
 The Joy of Flying Robots with Clojure - Carin Meier
 ---------------------------------------------------
 
-Veldig bra start på dagen. Artig foredrag om å programmere roboter (Roomba og AR Drone) i Clojure. Meningsløst å ta notater fra, men se videoen! 
+Veldig bra start på dagen. Artig foredrag om å programmere roboter (Roomba og AR Drone) i Clojure. Høydepunkt: AR Drone og Roomba som interagerer og "danser sammen". Meningsløst å ta notater fra, men se videoen! 
 
+
+Protocols, Functors and Type Classes - Creighton Kirkendall
+-----------------------------------------------------------
+
+> Opening quote: "Im gonna show a lot of code, but you're not gonna understand much of it..."
+
+The problem: data er i ett system, vi vil bruke et bibliotek i et annet system.
+
+- OO: wrappers and adaptoprs
+- I funksjonelle språk knytter vi ikke funksjonalitet til datene. I stedet utvider vi biblioteket.
+
+Eksempel vi ser på gjennom ulike språk: *"summere" over en datastruktur.*
+Krever at vi kan a) *legge sammen* elementer (på en eller annen måte) og b) *folde* datstrukturen.
+
+I eksempelet har vi et bibliotek for å summere over lister. Vi "utvider" biblioteket til å håndtere trær.
+
+Går igjennom kode for dette i Clojure, OCaml, Haskell, og Scala, og sammenlikner løsningene.
+
+Vi ser at til tross for at språkene har forskjellige features, er de grunnleggende konseptene mye like.
+Det er også tydelig at det er viktig at biblioteket er planlagt med tanken om at det skal utvides.
+
+Godt presentert, ikke for vanskelig, verdt å se.
 
