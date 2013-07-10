@@ -292,3 +292,12 @@ Sussman går igjennom en rekke eksempler fra electrical engineering og fysikk (m
 
 Forholdsvis avansert, ganske morsomt, og pøkk umulig å notere fra.
 
+Dag 3
+=====
+
+The Joy of Flying Robots with Clojure - Carin Meier
+---------------------------------------------------
+
+Veldig bra start på dagen. Artig foredrag om å programmere roboter (Roomba og AR Drone) i Clojure. Meningsløst å ta notater fra, men se videoen! 
+
+
