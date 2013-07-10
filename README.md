@@ -407,3 +407,18 @@ Webmachine er et webrammeverk for Erlang. I praksis en eneste stor tilstandsmask
 
 Note to self: `rebar compile skip_deps=true` for å ikke bruke evigheter på å kompilere hver gang.
 
+
+Everything I have learned I have learned from someone else - David Nolen
+------------------------------------------------------------------------
+
+David prater om hva han har gjort, hva som har inspirert han, og hvem han har lært fra. Han er innom temaer som logikkprogrammering og optimalisering implementasjoner av pattern matching. Veldig mye spennende, men ikke lett å notere fra.
+
+> The best way to predict the future is to read papers and *engineer* it  
+> -- David Nolan paraphrasing Alan Kay
+
+TOREAD:
+
+- M. Mitchell Waldrop, The Dream Machine
+- Chris Okasaki, Purly functional data structures
+- Bagwell paper/bok om datastrukturer
+- ...og må lese "CTM of Computer Programming" igjen
